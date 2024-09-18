@@ -21,6 +21,10 @@ header {
     align-items: center;
     width: 100%; 
 }
+a{
+    text-decoration: none;
+    color: #000000;
+}
 
 header .logo {
     font-size: 24px;
@@ -105,22 +109,28 @@ header nav a:hover {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(2, 600px);
+    gap: 1px;
 }
 
 .card {
-    padding: 40px;
-    border-radius: 10px;
-    font-size: 18px;
+    padding: 100px;
+    margin-left:150px;
+    margin-bottom: 50px;
+    border-radius: 15px;
+    font-size: 30px;
+    width: 550px;
+    height:250px;
     text-align: center;
     color: white;
     cursor: pointer;
-    transition: transform 0.2s;
+   
 }
 
-.card:hover {
-    transform: scale(1.05);
+.card a:hover {
+    font-size: 35px;
+    color:#5552e2;
+    
 }
 
 .card-green {
