@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+        <header>
+            <div class="logo">AVALIAFEST</div>
+            <nav>
+                <a href="index.html">home</a>
+                <a href="login.html">logout</a>
+            </nav>
+        </header>
+    
+    <div class="config-container">
+        <h1>Configurações da Conta</h1>
+        <form>
+            <div class="config-section">
+                <h2>Alterar Senha</h2>
+                <label for="senha_atual">Senha Atual:</label>
+                <input type="password" id="senha_atual" name="senha_atual" required><br><br>
+
+                <label for="nova_senha">Nova Senha:</label>
+                <input type="password" id="nova_senha" name="nova_senha" required><br><br>
+
+                <label for="confirmar_senha">Confirmar Nova Senha:</label>
+                <input type="password" id="confirmar_senha" name="confirmar_senha" required><br><br>
+            </div>
+
+            <div class="config-section">
+                <h2>Notificações</h2>
+                <label>
+                    <input type="checkbox" name="email_notifications" value="1">
+                    Receber notificações por e-mail
+                </label><br><br>
+
+            </div>
+
+            <div class="config-section">
+                <h2>Personalização</h2>
+                <label for="tema">Escolha um Tema:</label>
+                <select id="tema" name="tema">
+                    <option value="claro">Claro</option>
+                    <option value="escuro">Escuro</option>
+                    <option value="auto">Automático</option>
+                </select><br><br>
+            </div>
+
+            <button type="submit" onclick="aviso()">Salvar Configurações</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+          function aviso() {
+            alert('Configuraçôes Salvas!');
+        }
+    </script>
+</body>
+</html>

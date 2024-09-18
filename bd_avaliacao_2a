@@ -1,0 +1,65 @@
+CREATE DATABASE IF NOT EXISTS bd_avaliacao_2a;
+USE bd_avaliacao_2a;
+
+CREATE TABLE festival (
+    id INT AUTO_INCREMENT,
+    nome VARCHAR(50) NOT NULL,
+    datainicio DATETIME NOT NULL,
+    datafim DATETIME NOT NULL,
+    localfestival VARCHAR(100) NOT NULL,
+    descricao VARCHAR(300) NULL,
+    statusfestival VARCHAR(20) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE avaliador (
+    id INT AUTO_INCREMENT,
+    nome VARCHAR(50) NOT NULL,
+    email VARCHAR(70) NOT NULL,
+    categoria VARCHAR(70) NOT NULL,
+    rm INT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE expositor (
+    id INT AUTO_INCREMENT,
+    nome VARCHAR(50) NOT NULL,
+    datanasc DATE NULL,
+    email VARCHAR(100) NULL,
+    rm INT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE projeto (
+    id INT AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL,
+    descricao VARCHAR(200) NOT NULL,
+    notaprof DECIMAL(8,2) NOT NULL,
+    notageral DECIMAL(8,2) NOT NULL,
+    festival_id INT NOT NULL,
+    statusprojeto VARCHAR(20) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (festival_id) REFERENCES festival(id)
+);
+
+CREATE TABLE avaliacao (
+    id INT AUTO_INCREMENT,
+    nota DECIMAL(8,2) NOT NULL,
+    comentario VARCHAR(200) NULL,
+    datadeavaliacao DATETIME NOT NULL,
+    avaliador_id INT NOT NULL,
+    projeto_id INT NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (avaliador_id) REFERENCES avaliador(id),
+    FOREIGN KEY (projeto_id) REFERENCES projeto(id)
+);
+
+CREATE TABLE expositor_projeto (
+    id INT AUTO_INCREMENT,
+    expositor_id INT NOT NULL,
+    projeto_id INT NOT NULL,
+    funcao VARCHAR(20) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (expositor_id) REFERENCES expositor(id),
+    FOREIGN KEY (projeto_id) REFERENCES projeto(id)
+);
