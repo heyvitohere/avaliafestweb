@@ -57,16 +57,22 @@ header nav a:hover {
 }
 
 
+.profile img:hover{
+    transform: scale(1.2);
+}
+
 .profile img {
     border-radius: 50%;
     width: 80px;
     height: 80px;
     margin-bottom: 10px;
+    transition: 1.2s;
 }
 
 .profile h2 {
     font-size: 18px;
     margin-bottom: 5px;
+    position: relative;
 }
 
 .profile p {
@@ -75,7 +81,13 @@ header nav a:hover {
 
 .home{
     display: grid;
-    grid-template-columns: repeat(2, 1fr)
+    grid-template-columns: repeat(2, 1fr);
+    transition: 1s;
+}
+
+.home:hover{
+    transform: scale(1.5);
+   
 }
 
 .menu {
@@ -100,6 +112,8 @@ header nav a:hover {
 
 .menu a:hover {
     background-color: #7070a3;
+    transform: scale(1.05);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .dashboard {
@@ -130,13 +144,13 @@ header nav a:hover {
     text-align: center;
     color: white;
     cursor: pointer;
+    transition: 0.2s;
    
 }
 
-.card a:hover {
-    font-size: 35px;
-    color:#5552e2;
-    
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5);
 }
 
 .card-green {
