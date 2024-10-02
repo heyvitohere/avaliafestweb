@@ -1,5 +1,10 @@
-CREATE DATABASE IF NOT EXISTS bd_avaliacao_2a;
-USE bd_avaliacao_2a;
+USE master IF EXISTS( SELECT * FROM SYS.databases
+					 WHERE name = 'bd_avaliacao_2A')
+DROP DATABASE bd_avaliacao_2A
+GO
+CREATE DATABASE bd_avaliacao_2A
+GO
+USE bd_avaliacao_2A
 
 CREATE TABLE festival (
     id INT AUTO_INCREMENT,
