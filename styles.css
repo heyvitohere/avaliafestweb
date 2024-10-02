@@ -80,14 +80,24 @@ header nav a:hover {
 }
 
 .home{
-    display: grid;
+    display: inline-block;
     grid-template-columns: repeat(2, 1fr);
-    transition: 1s;
+    transition: 0.5s;
 }
 
 .home:hover{
-    transform: scale(1.5);
+    transform: scale(1.2);
    
+}
+
+.login{
+    display: inline-block;
+    grid-template-columns: repeat(2, 1fr);
+    transition: 0.5s;
+}
+
+.login:hover{
+    transform: scale(1.2);
 }
 
 .menu {
